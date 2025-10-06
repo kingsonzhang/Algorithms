@@ -1,0 +1,1 @@
+Assignments for SWE 241P Algorithms class
