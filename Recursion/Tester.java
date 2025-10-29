@@ -4,6 +4,6 @@ public class Tester{
         System.out.println(tester.permutationExists("HELLO WORLD", "world"));
 
         Chessboard board = new Chessboard();
-        System.out.println(board.maximumMoves(new int[] {1, 1, 1, 1, 1, 1, 1, 1}));
+        System.out.println(board.maximumMoves(new int[] {4, 2, 0, 6, 1, 7, 5, 3}));
     }
 }

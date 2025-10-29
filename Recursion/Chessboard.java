@@ -8,7 +8,7 @@ public class Chessboard{
 
     public int placePieces(int[] initialState, int[] updatedBoard, int row){
         if (row == 7){
-            int moves = 9;
+            int moves = 8;
             for (int i = 0; i < 8; i++){
                 if (this.validSpace(updatedBoard, row, i)){
                     updatedBoard[row] = i;
@@ -20,8 +20,10 @@ public class Chessboard{
         else{
             int[] moves = {8, 8, 8, 8, 8, 8, 8, 8};
             for (int i = 0; i < 8; i++){
-                updatedBoard[row] = i;
-                moves[i] = this.placePieces(initialState, updatedBoard, row + 1);
+                if (this.validSpace(updatedBoard, row, i)){
+                    updatedBoard[row] = i;
+                    moves[i] = this.placePieces(initialState, updatedBoard, row + 1);
+                }
             }
             int minimum = moves[0];
             for (int i = 1; i < moves.length; i++)
