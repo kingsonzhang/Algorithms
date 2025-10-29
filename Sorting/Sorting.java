@@ -32,6 +32,11 @@ public class Sorting{
         System.out.println(Arrays.toString(anagrams.values().toArray()));
     }
 
+    /**
+     * Helper function to return a int array of ASCII values of the characters in the parameter String
+     * @param word String to convert to array of ASCII values
+     * @return int array of ASCII values
+     */
     public int[] stringToValue(String word){
         char[] letters = word.toCharArray();
         int[] letterValues = new int[letters.length];
@@ -40,11 +45,15 @@ public class Sorting{
         return letterValues;
     }
 
+    /**
+     * Helper function to convert int array of ASCII values to String
+     * @param letters int array of ASCII values to convert
+     * @return String of the given ASCII value parameter
+     */
     public String charArrayToString(int[] letters){
         String word = "";
         for (int i = 0; i < letters.length; i++)
             word = word + (char) letters[i];
         return word;
     }
-    
 }

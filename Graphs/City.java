@@ -20,13 +20,10 @@ public class City{
 
     //Getter Methods
     public String getCityName() {return this.name;}
-
     public int getPopulation() {return this.population;}
-
     public ArrayList<String> getAdjacentCities() {return this.adjacentCities;}
 
     //Setter Methods
     public void addAdjacentCity(String city) {this.adjacentCities.add(city);}
-
     public void addPopulation(int people) {this.population += people;}
 }

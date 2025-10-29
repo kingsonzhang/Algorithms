@@ -17,6 +17,11 @@ public class Graph{
         return null;
     }
 
+    /**
+     * Find the number of unique islands, where each island is all of the connected cities in the Graph
+     * The Graph can contain multiple islands.
+     * @return int of the number of unique islands
+     */
     public int maxIslands(){
         int count = 0;
         ArrayList<String> visitedCities = new ArrayList<>();
@@ -29,6 +34,11 @@ public class Graph{
         return count;
     }
 
+    /**
+     * Takes a City and traversed ArrayList, and stores all the connected Cities to the City parameter using BFS
+     * @param city Given city to find all connected Cities
+     * @param traversed ArrayList to contain all traversed cities
+     */
     private void traverseAdjacentCities(City city, ArrayList<String> traversed){
         int index = traversed.size();
         traversed.add(city.getCityName());
@@ -42,6 +52,10 @@ public class Graph{
         }
     }
 
+    /**
+     * Find an island, and calculate the population of that island
+     * @return an ArrayList of a City in an island and the population of the island in "City Archipelago - Population" format
+     */
     public ArrayList<String> archipelagoPopulation(){
         ArrayList<String> islandPopulationCount = new ArrayList<>();
         ArrayList<String> visitedCities = new ArrayList<>();
@@ -58,6 +72,12 @@ public class Graph{
         return islandPopulationCount;
     }
 
+    /**
+     * Find the smallest amount of edges needed to traverse from startingCity to endingCity
+     * @param startingCity City to start the traversal
+     * @param endingCity City to end the traversal
+     * @return The smallest amount of edges/roads needed to go from startingCity to endingCity, otherwise return one if cities do not exist
+     */
     public int uniqueHighwaysPath(String startingCity, String endingCity){
         if (this.findCity(startingCity) == null || this.findCity(endingCity) == null)
             return -1;
@@ -75,7 +95,5 @@ public class Graph{
     }
 
     //Setter Methods
-    public void addCity(City newCity){
-        this.mapOfCities.add(newCity);
-    }
+    public void addCity(City newCity) {this.mapOfCities.add(newCity);}
 }
