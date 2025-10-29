@@ -2,11 +2,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class Permutation{
-    public static void main(String args[]){
-        Permutation tester = new Permutation();
-        System.out.println(tester.permutationExists("HELLO WORLD", "world"));
-    }
-
     public boolean permutationExists(String bigString, String smallString){
         HashMap<String, Boolean> encountered = new HashMap<>();
         return this.find(bigString.toLowerCase(), this.sortString(smallString.toLowerCase()), encountered);
